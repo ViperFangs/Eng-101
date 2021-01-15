@@ -184,7 +184,8 @@
 
 						sectionsBackgroundImage.removeClass('is-active');
 						sectionsBackgroundImage.eq(current).addClass('is-active');
-
+						
+						
 					}
 
 				});
@@ -194,6 +195,7 @@
 				setTimeout(function () {
 					swiper.updateAutoHeight();
 				}, 50);
+				
 
 			});
 		}
@@ -202,6 +204,33 @@
 	VLTJS.contentSlider.init();
 
 })(jQuery);
+/***********************************************
+ * SITE: AUTO CONTENT SLIDER CONFIGURATOR BY 9sefa9.github.io
+ ***********************************************/
+//settin randomImages to false, will show images in ascending order (picture number 1, 2 ,3 and so on..)
+var randomImages = false;
+//Do not change counter. 
+var counter=0;
+//the class where images/gifs are stored
+let images = $('.vlt-section__projects-background img');
+//will assign soon the lengths of images/gifs. 
+var maxChildren;
+//can be changed: it will wait 5000 milliseconds and then changes to the next image.
+var changeTimeInMillisecond = 5000;
+setInterval(function(){
+	if(randomImages === true){
+		maxChildren = images.length-1;
+		console.log(Math.floor(Math.random()* (maxChildren - 0 + 1) + 0));
+		images.removeClass('is-active');
+		images.eq(Math.floor(Math.random()* (maxChildren - 0 + 1) + 0)).addClass('is-active');
+	}else{
+		var maxChildren = counter;
+		images.removeClass('is-active');
+		images.eq(counter).addClass('is-active');
+		counter+=1;
+		counter = (counter %  images.length);
+	}
+},changeTimeInMillisecond);
 /***********************************************
  * SITE: FULLPAGE SLIDER
  ***********************************************/
