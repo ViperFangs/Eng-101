@@ -3321,10 +3321,10 @@ select:focus::-webkit-input-placeholder
 -------------------------------------------- */
 .vlt-progress-bar__title
 {
-    font-size: .8125rem;
-
-    margin: 0 0 1rem;
-
+    font-size: 1.3rem;
+	
+	color: #cf000f;
+	
     text-transform: uppercase;
 }
 .vlt-progress-bar__title > span
@@ -3333,7 +3333,7 @@ select:focus::-webkit-input-placeholder
 }
 .vlt-progress-bar__title > span::after
 {
-    content: '%';
+    content: '+';
 }
 
 .vlt-progress-bar__bar
